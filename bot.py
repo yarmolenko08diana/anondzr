@@ -26,11 +26,6 @@ intro_text = (
 
 sent_text = "💬 Сообщение отправлено, ожидайте ответ!"
 
-again_keyboard = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text="Отправить еще раз.")]],
-    resize_keyboard=True
-)
-
 
 def load_reply_map():
     if not os.path.exists(REPLY_MAP_FILE):
