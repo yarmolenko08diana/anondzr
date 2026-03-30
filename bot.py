@@ -27,7 +27,7 @@ intro_text = (
 sent_text = "💬 Сообщение отправлено, ожидайте ответ!"
 
 again_keyboard = ReplyKeyboardMarkup(
-    keyboard=[[KeyboardButton(text="Отправить еще раз")]],
+    keyboard=[[KeyboardButton(text="Отправить еще раз.")]],
     resize_keyboard=True
 )
 
