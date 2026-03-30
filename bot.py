@@ -1,9 +1,8 @@
 import asyncio
 import json
-import os
 from aiogram import Bot, Dispatcher, F
 from aiogram.enums import ParseMode
-from aiogram.types import Message, KeyboardButton, ReplyKeyboardMarkup
+from aiogram.types import Message
 from aiogram.client.default import DefaultBotProperties
 
 import os
@@ -77,7 +76,7 @@ def remember_message(owner_message_id: int, user_id: int):
 
 @dp.message(F.text == "/start")
 async def start_handler(message: Message):
-    await message.answer(intro_text, reply_markup=again_keyboard)
+    await message.answer(intro_text)
 
 
 @dp.message(F.from_user.id == OWNER_ID)
@@ -286,7 +285,7 @@ async def handle_user_message(message: Message):
         if sent_to_owner and message.from_user:
             remember_message(sent_to_owner.message_id, message.from_user.id)
 
-        await message.answer(sent_text, reply_markup=again_keyboard)
+            await message.answer(sent_text)
 
     except Exception as e:
         await message.answer("Произошла ошибка при отправке сообщения.")
