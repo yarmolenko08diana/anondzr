@@ -81,7 +81,6 @@ def remember_message(owner_message_id: int, user_id: int):
 
 
 @dp.message(F.text == "/start")
-@dp.message(F.text == "Отправить еще раз")
 async def start_handler(message: Message):
     await message.answer(intro_text, reply_markup=again_keyboard)
 
